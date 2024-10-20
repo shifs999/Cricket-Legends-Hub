@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore profiles and achievements of famous cricket players from around the world. Learn about their careers, achievements, and watch memorable matches.">
+    <meta name="keywords" content="Cricket, Player Profiles, Matches, Cricket Stars, Fan Zone, Interactive Map">
+    <meta name="author" content="Cricket Legends">
+    <title>Cricket Legends</title>
+    <link rel="shortcut icon" href="./img/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+            <h1>Cricket Legends</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#featured-players">Players</a></li>
+            <li><a href="#map-section">Map</a></li>
+            <li><a href="#top-matches">Top Matches</a></li>
+            <li><a href="#fan-zone">Fan Zone</a></li>
+        </ul>
+    </nav>
+
+
+    <section id="home" class="home-section">
+        <div class="home-content">
+            <h1>Welcome to Cricket Legends</h1>
+            <p>Discover the journeys of cricket stars, their achievements, and relive unforgettable matches. Your
+                ultimate destination for cricket fans worldwide!</p>
+            <a href="#featured-players" class="btn">Explore Players</a>
+        </div>
+    </section>
+
+
+    <button id="scrollToTop" class="scroll-button">↑</button>
+
+
+    <button id="scrollToBottom" class="scroll-button">↓</button>
+
+
+
+    <section id="featured-players" class="section">
+        <h2>Featured Players</h2>
+        <div class="players-grid">
+
+
+            <div class="player-card">
+                <img src="img/sachin.jpg" alt="" class="player-img">
+                <div class="player-info">
+                    <h3>Sachin Tendulkar (India)</h3>
+                    <p>Career Stats: 34,357 runs</p>
+                    <p>Achievements: Most runs in international cricket, 100 centuries</p>
+                </div>
+            </div>
+
+
+            <div class="player-card">
+                <img src="img/brad.jpg" alt="" class="player-img">
+                <div class="player-info">
+                    <h3>Sir Don Bradman (Australia)</h3>
+                    <p>Career Stats: 6,996 runs (Test)</p>
+                    <p>Achievements: Highest Test average of 99.94</p>
+                </div>
+            </div>
+
+
+            <div class="player-card">
+                <img src="img/kohli.jpg" alt="" class="player-img">
+                <div class="player-info">
+                    <h3>Virat Kohli (India)</h3>
+                    <p>Career Stats: 23,000+ runs</p>
+                    <p>Achievements: ICC Cricketer of the Decade (2010s)</p>
+                </div>
+            </div>
+
+
+            <div class="player-card">
+                <img src="img/msd.jpg" alt="" class="player-img">
+                <div class="player-info">
+                    <h3>MS Dhoni (India)</h3>
+                    <p>Career Stats: 10,773 ODI runs</p>
+                    <p>Achievements: Most successful Indian captain, led India to 3 ICC trophies</p>
+                </div>
+            </div>
+
+
+            <div class="player-card">
+                <img src="img/rp.jpg" alt="Ricky Ponting" class="player-img">
+                <div class="player-info">
+                    <h3>Ricky Ponting (Australia)</h3>
+                    <p>Career Stats: 13,378 Test runs</p>
+                    <p>Achievements: Captained Australia to 2 World Cup titles</p>
+                </div>
+            </div>
+
+
+            <div class="player-card">
+                <img src="img/lara.jpg" alt="Brian Lara" class="player-img">
+                <div class="player-info">
+                    <h3>Brian Lara (West Indies)</h3>
+                    <p>Career Stats: 11,953 Test runs</p>
+                    <p>Achievements: Highest individual score in Tests (400*)</p>
+                </div>
+            </div>
+
+
+            <div class="player-card">
+                <img src="img/warne.jpg" alt="Shane Warne" class="player-img">
+                <div class="player-info">
+                    <h3>Shane Warne (Australia)</h3>
+                    <p>Career Stats: 708 Test wickets</p>
+                    <p>Achievements: Legendary leg-spinner</p>
+                </div>
+            </div>
+
+
+            <div class="player-card">
+                <img src="img/abd.jpg" alt="AB de Villiers" class="player-img">
+                <div class="player-info">
+                    <h3>AB de Villiers (South Africa)</h3>
+                    <p>Career Stats: 20,014 runs</p>
+                    <p>Achievements: Fastest ODI century (31 balls)</p>
+                </div>
+            </div>
+
+
+
+            <div class="player-card">
+                <img src="img/bm.jpg" alt="Brendon McCullum" class="player-img">
+                <div class="player-info">
+                    <h3>Brendon McCullum (New Zealand)</h3>
+                    <p>Career Stats: 6,453 Test runs</p>
+                    <p>Achievements: Fastest Test century (54 balls)</p>
+                </div>
+            </div>
+
+
+
+            <div class="player-card">
+                <img src="img/rohit.jpg" alt="Rohit Sharma" class="player-img">
+                <div class="player-info">
+                    <h3>Rohit Sharma (India)</h3>
+                    <p>Career Stats: Over 17,000 international runs</p>
+                    <p>Achievements: Only player to score three double centuries in ODIs</p>
+                </div>
+            </div>
+
+
+            <div class="player-card">
+                <img src="img/viv.jpg" alt="Sir Viv Richards" class="player-img">
+                <div class="player-info">
+                    <h3>Sir Viv Richards (West Indies)</h3>
+                    <p>Career Stats: 8,540 Test runs, 6,721 ODI runs</p>
+                    <p>Achievements: One of the greatest batsmen of all time</p>
+                </div>
+            </div>
+
+            <div class="player-card">
+                <img src="img/jimmy.jpg" alt="JA" class="player-img">
+                <div class="player-info">
+                    <h3>James Anderson (England)</h3>
+                    <p>Career Stats: Over 700 test wickets and 250 plus ODI wickets</p>
+                    <p>Achievements: Holds the record for the most wickets taken by a fast-bowler in Tests</p>
+                </div>
+            </div>
+
+
+
+            <div class="player-card">
+                <img src="img/McGrath.jpg" alt="Glenn McGrath" class="player-img">
+                <div class="player-info">
+                    <h3>Glenn McGrath (Australia)</h3>
+                    <p>Career Stats: 563 Test wickets</p>
+                    <p>Achievements: Most wickets in World Cup history</p>
+                </div>
+            </div>
+
+
+            <div class="player-card">
+                <img src="img/kapil.jpg" alt="Kapil Dev" class="player-img">
+                <div class="player-info">
+                    <h3>Kapil Dev (India)</h3>
+                    <p>Career Stats: 5,248 Test runs</p>
+                    <p>Achievements: Captained India to World Cup victory in 1983</p>
+                </div>
+            </div>
+
+
+            <div class="player-card">
+                <img src="img/gavas.jpg" alt="Sunil Gavaskar" class="player-img">
+                <div class="player-info">
+                    <h3>Sunil Gavaskar (India)</h3>
+                    <p>Career Stats: 10,122 Test runs</p>
+                    <p>Achievements: First player to score 10,000 Test runs</p>
+                </div>
+            </div>
+
+
+            <div class="player-card">
+                <img src="img/wasim.jpg" alt="Wasim Akram" class="player-img">
+                <div class="player-info">
+                    <h3>Wasim Akram (Pakistan)</h3>
+                    <p>Career Stats: 916 international wickets</p>
+                    <p>Achievements: Known as the "Sultan of Swing"</p>
+                </div>
+            </div>
+
+
+
+            <div class="player-card">
+                <img src="img/kallis.jpg" alt="Jacques Kallis" class="player-img">
+                <div class="player-info">
+                    <h3>Jacques Kallis (South Africa)</h3>
+                    <p>Career Stats: 13,289 Test runs</p>
+                    <p>Achievements: One of the greatest all-rounders</p>
+                </div>
+            </div>
+
+
+
+            <div class="player-card">
+                <img src="img/sanga.jpg" alt="Kumar Sangakkara" class="player-img">
+                <div class="player-info">
+                    <h3>Kumar Sangakkara (Sri Lanka)</h3>
+                    <p>Career Stats: 12,400 Test runs</p>
+                    <p>Achievements: ICC Cricketer of the Year (2012)</p>
+                </div>
+            </div>
+
+
+
+
+            <div class="player-card">
+                <img src="img/kumble.jpg" alt="Anil Kumble" class="player-img">
+                <div class="player-info">
+                    <h3>Anil Kumble (India)</h3>
+                    <p>Career Stats: 619 Test wickets</p>
+                    <p>Achievements: Only Indian to take all 10 wickets in a Test innings</p>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="player-card">
+                <img src="img/dravid.jpg" alt="Rahul Dravid" class="player-img">
+                <div class="player-info">
+                    <h3>Rahul Dravid (India)</h3>
+                    <p>Career Stats: 13,288 Test runs</p>
+                    <p>Achievements: The "Wall" of Indian cricket and 2024 T20 WC Winner Indian Team Head Coach</p>
+                </div>
+            </div>
+
+
+            <div class="player-card">
+                <img src="img/yuvi.jpg" alt="Yuvraj Singh" class="player-img">
+                <div class="player-info">
+                    <h3>Yuvraj Singh (India)</h3>
+                    <p>Career Stats: 11,778 ODI runs</p>
+                    <p>Achievements: Player of the Tournament, 2007 T20 World Cup</p>
+                </div>
+            </div>
+
+
+
+            <div class="player-card">
+                <img src="img/gayle.jpg" alt="Chris Gayle" class="player-img">
+                <div class="player-info">
+                    <h3>Chris Gayle (West Indies)</h3>
+                    <p>Career Stats: 25,000+ international runs</p>
+                    <p>Achievements: Most T20I centuries</p>
+                </div>
+            </div>
+
+
+
+
+            <div class="player-card">
+                <img src="img/mm.jpg" alt="Muttiah Muralitharan" class="player-img">
+                <div class="player-info">
+                    <h3>Muttiah Muralitharan (Sri Lanka)</h3>
+                    <p>Career Stats: 800 Test wickets</p>
+                    <p>Achievements: Highest wicket-taker in Test history</p>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <section id="map-section" class="section">
+        <h2>Interactive Map</h2>
+        <p>Click on a country to explore its cricket legends.</p>
+        <div id="map" style="height: 400px; width: 100%; border: 2px solid #0056b3;"></div>
+    </section>
+
+
+    <section id="top-matches" class="section">
+        <div class="heading-container">
+            <h2>Memorable Matches</h2>
+        </div>
+        <div class="matches-container">
+            <div class="match">
+                <h3>World Cup Final 2019 - England vs New Zealand</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/pQ5xEiZ-5IE"
+                    title="World Cup Final 2019" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <p>An unforgettable match between England and New Zealand, decided in a thrilling Super Over.</p>
+            </div>
+
+            <div class="match">
+                <h3>India vs Australia - Gabba 2021 Test</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/wY6UyatwVTA"
+                    title="India vs Australia - Gabba 2021 Test" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <p>A remarkable comeback by India as they broke Australia's unbeaten streak at the Gabba, which had
+                    lasted since 1988.</p>
+            </div>
+
+            <div class="match">
+                <h3>India vs England - T20 World Cup 2007</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/8b0ubLO2MUE"
+                    title="India vs England - T20 World Cup 2007" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <p>Iconic Moment when Yuvraj Singh slammed 6 sixes in a row to Broad.</p>
+            </div>
+
+            <div class="match">
+                <h3>India vs Sri Lanka - World Cup 2011 Final</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/YphL3Whh5B0"
+                    title="India vs Sri Lanka World Cup 2011 Final" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <p>M.S. Dhoni delivers World Cup glory after 28 years</p>
+            </div>
+
+            <div class="match">
+                <h3>West Indies vs England - T20 World Cup Final 2016</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/MQSb1J9sodk"
+                    title="West Indies vs England T20 World Cup Final 2016" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <p>Carlos Brathwaite hit four consecutive sixes in the final over to seal an unforgettable win for West
+                    Indies in the T20 WorldCup 2016 final against England</p>
+            </div>
+
+
+            <div class="match">
+                <h3>India vs Bangladesh - Nidahas Trophy Final 2018</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/QD2hxpQd_b0"
+                    title="India vs Bangladesh Nidahas Trophy Final 2018" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <p>Dinesh Karthik's last-ball six to win the match made it a thrilling finale for India.</p>
+            </div>
+
+    </section>
+
+
+    <section id="fan-zone" class="section">
+        <h2>Fan Zone</h2>
+        <div class="fan-stories">
+            <form id="fan-story-form">
+                <label for="story">Share Your Story</label>
+                <textarea id="story" placeholder="Tell us your favorite cricket moment..." required></textarea>
+                <button type="submit" class="btn">Submit Story</button>
+            </form>
+        </div>
+
+        <div class="fan-voting">
+            <h3>Vote for the Greatest Player</h3>
+            <div id="voting">
+                <button data-player="player1">Sachin Tendulkar</button>
+                <button data-player="player2">Virat Kohli</button>
+                <button data-player="player3">Brian Lara</button>
+                <button data-player="player4">AB De Villiers</button>
+            </div>
+
+            <div id="vote-result">Player 1: 0 votes | Player 2: 0 votes | Player 3: 0 votes | Player 4: 0 votes</div>
+
+        </div>
+    </section>
+
+
+
+    <footer>
+        <p>&copy; 2024 Cricket Legends - Shifs | All Rights Reserved</p>
+        <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#featured-players">Players</a></li>
+            <li><a href="#map-section">Map</a></li>
+            <li><a href="#top-matches">Top Matches</a></li>
+            <li><a href="#fan-zone">Fan Zone</a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>
